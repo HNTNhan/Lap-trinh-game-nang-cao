@@ -1,0 +1,383 @@
+fileFormatVersion: 2
+guid: 86513f6a0a138614cbfe5f620633b651
+ModelImporter:
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      74: -562947164214349369
+    second: Body|Bip01|Take 001|BaseLayer
+  - first:
+      74: -203655887218126122
+    second: Idle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Zombie
+    second: {fileID: 2100000, guid: 4bd180b051e2ca54ebfe82cf04ec20a6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Zombie Idle
+      takeName: Body|Bip01|Take 001|BaseLayer
+      internalID: -562947164214349369
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: zombie1(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: zombie1(Clone)
+      position: {x: -0, y: 0.8729375, z: -0.0032746887}
+      rotation: {x: -0.50000036, y: 0.49999967, z: 0.4999996, w: 0.5000004}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: Spine
+      parentName: Body
+      position: {x: 0.0000021041258, y: 0.000000002554269, z: 0.00014442977}
+      rotation: {x: -0.0074763885, y: -0.7070666, z: -0.7070679, w: 0.0074799946}
+      scale: {x: 1.0000188, y: 1.0000019, z: 1.0000163}
+    - name: Spine 1
+      parentName: Spine
+      position: {x: -1.0177447e-12, y: 0.002568941, z: 0}
+      rotation: {x: -0.0000009225913, y: 0.00000031292436, z: 0.094645664, w: 0.995511}
+      scale: {x: 1.000011, y: 0.99999946, z: 1.0000101}
+    - name: Neck
+      parentName: Spine 1
+      position: {x: -4.763941e-11, y: 0.002714388, z: 0}
+      rotation: {x: 0.0000025922998, y: 0.00000078212054, z: -0.2806, w: 0.9598248}
+      scale: {x: 0.9999741, y: 1.0000244, z: 0.99999523}
+    - name: Head
+      parentName: Neck
+      position: {x: -0.000004501694, y: 0.0016149024, z: 0.0000000017028465}
+      rotation: {x: 0.00000009290284, y: 0.00000014894789, z: 0.025444403, w: 0.9996762}
+      scale: {x: 1.0000005, y: 1.0000086, z: 1.0000172}
+    - name: Head_end
+      parentName: Head
+      position: {x: -0, y: 0.0019646448, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L UpperArm 1
+      parentName: Spine 1
+      position: {x: 0.000091204216, y: 0.0031459734, z: 0.0014212151}
+      rotation: {x: 0.12634487, y: 0.67567843, z: 0.71340156, w: 0.13621284}
+      scale: {x: 0.9999932, y: 1.0000272, z: 1.0000181}
+    - name: L Forearm
+      parentName: L UpperArm 1
+      position: {x: 9.536743e-11, y: 0.0014492961, z: 2.4437904e-10}
+      rotation: {x: 0.00077849225, y: -0.1502322, z: -0.036748808, w: -0.9879672}
+      scale: {x: 0.99997425, y: 1.0000162, z: 1.000035}
+    - name: L Forearm 1
+      parentName: L Forearm
+      position: {x: -0, y: 0.0020135667, z: -2.9802322e-10}
+      rotation: {x: -0.1523207, y: 0.5690649, z: 0.19562712, w: 0.7840239}
+      scale: {x: 1.0000082, y: 1.0000201, z: 0.9999745}
+    - name: L Hand 1
+      parentName: L Forearm 1
+      position: {x: 2.8312205e-10, y: 0.0021058912, z: -1.013279e-10}
+      rotation: {x: 0.16746464, y: 0.94268394, z: 0.016768573, w: -0.28813437}
+      scale: {x: 0.9998418, y: 1.0000623, z: 1.0001135}
+    - name: L Hand_end
+      parentName: L Hand 1
+      position: {x: -0, y: 0.001320468, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R UpperArm 1
+      parentName: Spine 1
+      position: {x: 0.00009122118, y: 0.003145981, z: -0.0014211882}
+      rotation: {x: 0.17527004, y: 0.6646727, z: -0.70298123, w: -0.1825048}
+      scale: {x: 0.9999726, y: 1.0000023, z: 1.0000132}
+    - name: R Forearm 1
+      parentName: R UpperArm 1
+      position: {x: -1.1920928e-10, y: 0.0014492953, z: -4.768371e-10}
+      rotation: {x: -0.011139148, y: 0.04003408, z: 0.03502856, w: 0.998522}
+      scale: {x: 1.0000137, y: 1.000029, z: 1.0000136}
+    - name: R Forearm 1 1
+      parentName: R Forearm 1
+      position: {x: 9.536743e-11, y: 0.0020135655, z: -7.152557e-11}
+      rotation: {x: -0.10488914, y: -0.04796024, z: 0.22465482, w: 0.96758896}
+      scale: {x: 0.999951, y: 1.0000199, z: 1.0000556}
+    - name: R Hand 1
+      parentName: R Forearm 1 1
+      position: {x: -7.152557e-11, y: 0.0021058929, z: -6.705522e-12}
+      rotation: {x: -0.11327599, y: 0.8936926, z: 0.12447555, w: -0.41591823}
+      scale: {x: 0.9999358, y: 1.0000786, z: 0.99996465}
+    - name: R Hand_end
+      parentName: R Hand 1
+      position: {x: -0, y: 0.0013204679, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L Thigh
+      parentName: Spine
+      position: {x: -0.00000095342034, y: -0.00014444355, z: 0.0008011672}
+      rotation: {x: 0.99322766, y: -0.06397923, z: -0.07494206, w: 0.06155631}
+      scale: {x: 1.0000014, y: 1.0000167, z: 1.0000082}
+    - name: L Calf 1
+      parentName: L Thigh
+      position: {x: 1.1920929e-11, y: 0.0041445442, z: 5.9604643e-12}
+      rotation: {x: -0.010095865, y: 0.048999574, z: 0.045092486, w: 0.99772936}
+      scale: {x: 1.000003, y: 0.99999726, z: 0.99999726}
+    - name: L Foot
+      parentName: L Calf 1
+      position: {x: 1.1324882e-10, y: 0.0038054248, z: 1.4901161e-10}
+      rotation: {x: -0.02461331, y: 0.07945637, z: -0.57042783, w: 0.8171248}
+      scale: {x: 0.9999932, y: 1.0000142, z: 1.0000076}
+    - name: L Toe0
+      parentName: L Foot
+      position: {x: -2.8014183e-10, y: 0.0011459435, z: -4.470348e-12}
+      rotation: {x: -0.09108877, y: -0.078053094, z: -0.04224399, w: 0.99188006}
+      scale: {x: 1.0000033, y: 0.9999962, z: 1.0000123}
+    - name: L Toe0_end
+      parentName: L Toe0
+      position: {x: -0, y: 0.0006977602, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R Thigh
+      parentName: Spine
+      position: {x: -0.00000094648, y: -0.00014444064, z: -0.00080116786}
+      rotation: {x: 0.99378824, y: -0.054573555, z: -0.06709383, w: -0.07003634}
+      scale: {x: 1.0000082, y: 1.0000191, z: 1.0000087}
+    - name: R Calf 1
+      parentName: R Thigh
+      position: {x: -4.7683715e-11, y: 0.0041445442, z: 4.172325e-11}
+      rotation: {x: 0.017766116, y: 0.06195534, z: 0.04265692, w: 0.9970087}
+      scale: {x: 1.0000052, y: 1.0000012, z: 1.0000002}
+    - name: R Foot
+      parentName: R Calf 1
+      position: {x: -1.3113022e-10, y: 0.003805424, z: 1.6018747e-11}
+      rotation: {x: -0.02779786, y: -0.102817565, z: -0.5702816, w: 0.81451505}
+      scale: {x: 0.99999213, y: 1.0000203, z: 1.0000001}
+    - name: R Toe0
+      parentName: R Foot
+      position: {x: 6.556511e-11, y: 0.0011459432, z: -4.470348e-12}
+      rotation: {x: 0.07420751, y: -0.105166756, z: -0.06763843, w: 0.9893727}
+      scale: {x: 1.0000302, y: 1.0000057, z: 1.0000058}
+    - name: R Toe0_end
+      parentName: R Toe0
+      position: {x: -0, y: 0.0006977602, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R Forearm
+      parentName: zombie1(Clone)
+      position: {x: -2.1124255e-16, y: 0.0067958827, z: -0.0032746887}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: R UpperArm
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: L Spine1
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: L UpperArm
+      parentName: zombie1(Clone)
+      position: {x: 0.13079327, y: 0.6477319, z: -0.0069310083}
+      rotation: {x: -0.7058071, y: -0.007370404, z: 0.0072054113, w: 0.7083292}
+      scale: {x: 99.99999, y: 100, z: 100}
+    - name: R Spine
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: ' L Pelvis'
+      parentName: zombie1(Clone)
+      position: {x: -2.1124255e-16, y: 0.0067958827, z: -0.0032746887}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: L Calf
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: ' R Thigh'
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: R Hand
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: L Hand
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: ' Head'
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: R Spine1
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.053801e-17, z: 9.878229e-22, w: 0.7071067}
+      scale: {x: 3937.0076, y: 3937.0076, z: 3937.0078}
+    - name: ' L Forearm'
+      parentName: zombie1(Clone)
+      position: {x: -2.1124255e-16, y: 0.0067958827, z: -0.0032746887}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: R Calf
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: ' L Thigh'
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: ' R Pelvis'
+      parentName: zombie1(Clone)
+      position: {x: -2.1124255e-16, y: 0.0067958827, z: -0.0032746887}
+      rotation: {x: -0.7071068, y: 2.0538484e-17, z: -4.1594911e-22, w: 0.7071067}
+      scale: {x: 99.99999, y: 99.99999, z: 100}
+    - name: L Spine
+      parentName: zombie1(Clone)
+      position: {x: -6.8904165e-17, y: 0.0067958827, z: -0.0032745095}
+      rotation: {x: -0.7071068, y: 2.053801e-17, z: 9.878229e-22, w: 0.7071067}
+      scale: {x: 3937.0076, y: 3937.0076, z: 3937.0078}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
