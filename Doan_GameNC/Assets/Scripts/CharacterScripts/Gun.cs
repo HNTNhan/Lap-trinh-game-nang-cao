@@ -31,6 +31,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (animator.GetBool("Die")) return;
         timer += Time.deltaTime;
         if(timer>=fireRate)
         {
@@ -44,7 +45,7 @@ public class Gun : MonoBehaviour
 
     private void FireGun()
     {
-
+        if (PauseMenu.GameIsPause) return;
         muzzleParticle.Play();
         gunfireSound.Play();
 

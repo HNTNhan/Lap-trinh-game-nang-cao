@@ -24,6 +24,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if (animator.GetBool("Die")) return;
         var horizontal = Input.GetAxis("Mouse X");
         var vertical = Input.GetAxis("Vertical");
 
