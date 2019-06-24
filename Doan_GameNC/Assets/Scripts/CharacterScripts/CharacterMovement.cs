@@ -25,20 +25,24 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         if (animator.GetBool("Die")) return;
-        var horizontal = Input.GetAxis("Mouse X");
+        var horizontalMouse = Input.GetAxis("Mouse X");
         var vertical = Input.GetAxis("Vertical");
+        var horizontal = Input.GetAxis("Horizontal");
 
         var movement = new Vector3(horizontal, 0, vertical);
 
-        animator.SetFloat("Speed", vertical);
+        animator.SetFloat("SpeedY", vertical);
+        animator.SetFloat("SpeedX", horizontal);
 
-        transform.Rotate(Vector3.up, horizontal * turnSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up, horizontalMouse * turnSpeed * Time.deltaTime);
 
         if(vertical != 0)
         {
             float moveSpeed = vertical > 0 ? forwardMoveSpeed : backwardMoveSpeed;
 
             characterController.SimpleMove(transform.forward * moveSpeed * vertical);
+            characterController.SimpleMove(transform.right * moveSpeed * horizontal);
         }
+        characterController.SimpleMove(transform.right * backwardMoveSpeed * horizontal);
     }
 }

@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField]
     [Range(0f, 3.0f)]
-    private float sensitivity = 1f;
+    private float sensitivity = 0.8f;
 
     private CinemachineComposer composer;
     

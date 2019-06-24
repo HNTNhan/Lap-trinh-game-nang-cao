@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Health health;
     [SerializeField]
-    private int startingHealth = 10;
-    private int currentHealth;
-    private int ammo = 20;
     private int maxAmmo = 60;
+    private int score = 0;
     private int currentAmmo;
     private Vector3 position;
     private Quaternion rotation;
@@ -16,7 +15,7 @@ public class Player : MonoBehaviour
 
     public int GetCurrentHealth()
     {
-        return currentHealth;
+        return health.GetCurrentHealth();
     }
     public int GetMaxAmmo()
     {
@@ -27,10 +26,17 @@ public class Player : MonoBehaviour
         return currentAmmo;
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
+
+
     private void OnEnable()
     {
         Cursor.visible = false;
-        currentHealth = startingHealth;
+        health = GetComponent<Health>();
+        currentAmmo = maxAmmo;
         animator = GetComponentInChildren<Animator>();
         if (PlayerPrefs.GetString("Load") == "true") LoadPlayer();
     }
@@ -43,7 +49,7 @@ public class Player : MonoBehaviour
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        currentHealth = data.health;
+        health.SetCurrentHealth(data.health);
         maxAmmo = data.maxAmmo;
         currentAmmo = data.currentAmmo;
 
@@ -57,11 +63,26 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
-        if (currentHealth <= 0)
+        health.TakeDamage(damageAmount);
+        if(health.GetCurrentHealth() <= 0)
         {
             animator.SetBool("Die", true);
         }
+    }
+
+    public void Reload()
+    {
+        currentAmmo = maxAmmo;
+    }
+
+    public void ReduceAmmo()
+    {
+        currentAmmo--;
+    }
+
+    public void IncreaseScore(int num)
+    {
+        score += num;
     }
 
     public void Die()
