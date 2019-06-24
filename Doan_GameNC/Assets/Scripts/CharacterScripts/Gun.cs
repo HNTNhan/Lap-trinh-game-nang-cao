@@ -57,6 +57,7 @@ public class Gun : MonoBehaviour
         if(Physics.Raycast(ray,out hitInfo, 100))
         {
             var health = hitInfo.collider.GetComponent<Health>();
+            
             if(health != null)
             {
                 health.TakeDamage(damage);

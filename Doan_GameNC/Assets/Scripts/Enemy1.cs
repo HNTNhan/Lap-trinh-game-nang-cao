@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class Enemy1 : MonoBehaviour
 {
     [SerializeField]
-    private float attackRefreshRate = 1.5f;
+    //private float attackRefreshRate = 1.5f;
 
     private GameObject player;
     private AggroDetection aggroDetection;
@@ -33,6 +33,7 @@ public class Enemy1 : MonoBehaviour
     private void AggroDetection_OnAggro(Transform target)
     {
         playerPosition = target.GetComponent<Transform>().position;
+        
         Health health = target.GetComponent<Health>();
         if (health != null)
         {
@@ -44,6 +45,10 @@ public class Enemy1 : MonoBehaviour
     {
         if(healthTarget != null)
         {
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Dying"))
+            {
+                if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 5) GetComponent<Health>().Die();
+            }
             attackTimer += Time.deltaTime;
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
             {
@@ -74,7 +79,7 @@ public class Enemy1 : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("attack") && check == true) return false;
         check = false;
-        if (Vector3.Distance(player.GetComponent<Transform>().position, transform.position) > distance.stoppingDistance || distance.remainingDistance == 0)
+        if (Vector3.Distance(player.GetComponent<Transform>().position, transform.position) > distance.stoppingDistance)
         {
             if(animator.GetCurrentAnimatorStateInfo(0).IsName("idle_attack"))
             {

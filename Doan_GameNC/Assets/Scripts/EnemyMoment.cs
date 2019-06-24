@@ -10,12 +10,10 @@ public class EnemyMoment : MonoBehaviour
     private AggroDetection aggroDetection;
     private Transform target;
     private Vector3 transform_child;
-    bool check;
 
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        check = false;
         animator = GetComponentInChildren<Animator>();
         transform_child = transform.GetChild(0).GetComponent<Transform>().position;
         aggroDetection = GetComponent<AggroDetection>();
@@ -31,15 +29,27 @@ public class EnemyMoment : MonoBehaviour
     {
         if(target != null)
         {
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("attack") && !animator.GetBool("Die"))
             {
                 navMeshAgent.SetDestination(target.position);
             }
-            
-            var targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
-            // Smoothly rotate towards the target point.
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
-            
+
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
+            {
+                navMeshAgent.SetDestination(transform.position);
+            }
+
+            if(animator.GetBool("Die") == false)
+            {
+                var targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+                // Smoothly rotate towards the target point.
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+            }
+            else
+            {
+                navMeshAgent.SetDestination(transform.position);
+            }
+
             float currentSpeed = navMeshAgent.velocity.magnitude;
             if (gameObject.name == "Enemy1") currentSpeed *= 2;
             animator.SetFloat("Speed", currentSpeed);
