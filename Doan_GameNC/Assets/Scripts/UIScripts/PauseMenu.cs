@@ -48,6 +48,18 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void Load()
+    {
+        PlayerPrefs.SetString("Load", "true");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        GameIsPause = false;
+        CMvcam.SetActive(true);
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
     public void QuitGame()
     {
         //Cursor.lockState = CursorLockMode.None;

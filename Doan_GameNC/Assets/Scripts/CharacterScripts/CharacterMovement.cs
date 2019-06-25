@@ -24,6 +24,11 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if(PlayerPrefs.GetString("Load") == "true")
+        {
+            PlayerPrefs.SetString("Load", "false");
+            return;
+        }
         if (animator.GetBool("Die")) return;
         var horizontalMouse = Input.GetAxis("Mouse X");
         var vertical = Input.GetAxis("Vertical");
