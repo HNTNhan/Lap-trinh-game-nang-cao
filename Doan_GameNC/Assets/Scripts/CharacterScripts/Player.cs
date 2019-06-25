@@ -48,8 +48,10 @@ public class Player : MonoBehaviour
 
     public void LoadPlayer()
     {
+        
         PlayerData data = SaveSystem.LoadPlayer();
         health.SetCurrentHealth(data.health);
+        TakeDamage(0);
         maxAmmo = data.maxAmmo;
         currentAmmo = data.currentAmmo;
         score = data.score;

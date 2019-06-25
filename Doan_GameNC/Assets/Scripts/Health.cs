@@ -43,6 +43,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+
         currentHealth -= damageAmount;
 
         float currentHealthPct = (float)currentHealth / (float)startingHealth;
@@ -59,6 +60,7 @@ public class Health : MonoBehaviour
             animator.ResetTrigger("Attack");
             //Die();
         }
+
     }
 
     public void Die()

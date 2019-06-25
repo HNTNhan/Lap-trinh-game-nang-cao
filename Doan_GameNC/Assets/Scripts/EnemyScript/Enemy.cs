@@ -9,11 +9,10 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     //private float attackRefreshRate = 1.5f;
 
-
     private AggroDetection aggroDetection;
     private Player playerTarget;
     private Animator animator;
-    private float checkTime;
+    public float checkTime;
     private GameObject player;
     private NavMeshAgent distance;
     bool check;
@@ -46,9 +45,12 @@ public class Enemy : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Dying"))
             {
                 checkTime += Time.deltaTime;
-                if (checkTime >= 2) GetComponent<Health>().Die();
+                if (checkTime >= 2)
+                {
+                    checkTime = 0;
+                    GetComponent<Health>().Die();
+                }
             }
-            
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
             {
                 if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f && !attacked)

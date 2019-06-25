@@ -24008,8 +24008,8 @@ GameObject:
   - component: {fileID: 722653900}
   - component: {fileID: 722653899}
   - component: {fileID: 722653898}
-  - component: {fileID: 722653905}
   - component: {fileID: 722653904}
+  - component: {fileID: 722653905}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -24115,10 +24115,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 722653897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6733181e2b36e942afd3c005067bf0e, type: 3}
+  m_Script: {fileID: 11500000, guid: a08afce306da77f4eb939fa7f44e1ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  aggroDetection: {fileID: 0}
 --- !u!114 &722653905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24270,11 +24270,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 725710020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e63a538dca44f0548a8b13b540d2eed0, type: 3}
+  m_Script: {fileID: 11500000, guid: a08afce306da77f4eb939fa7f44e1ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   aggroDetection: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &725710022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52072,17 +52071,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1359921243}
-        m_MethodName: LoadPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 579225124}
         m_MethodName: Load
         m_Mode: 1
@@ -52096,6 +52084,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1463634566}
         m_MethodName: LoadEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1359921243}
+        m_MethodName: LoadPlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
