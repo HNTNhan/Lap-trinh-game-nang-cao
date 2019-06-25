@@ -24098,7 +24098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722653897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.3616934, y: 0.8750882, z: -13.684643}
+  m_LocalPosition: {x: 3.3616934, y: 0, z: -13.684643}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 726830293}
@@ -24356,7 +24356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725710020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.7216935, y: 0.8750882, z: -20.105122}
+  m_LocalPosition: {x: 7.7216935, y: 0, z: -20.105122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 577592074}
@@ -47511,6 +47511,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1463634566}
+        m_MethodName: SaveEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1387040350
@@ -48060,6 +48071,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 579225124}
         m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1463634566}
+        m_MethodName: LoadEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49818,9 +49840,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463634565}
+  - component: {fileID: 1463634566}
   m_Layer: 0
   m_Name: AllEnemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49833,7 +49856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463634564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.73, y: -4.659088, z: -27.45488}
+  m_LocalPosition: {x: -17.73, y: -3.72, z: -27.45488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1660107211}
@@ -49842,6 +49865,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1463634566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463634564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d26fd69561a7344bb7db0fa72824c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allEnemy: []
 --- !u!4 &1465043341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4497011438508190, guid: 7446a392a730ac14d9cc70d21cf7ace0,
@@ -52049,6 +52085,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 579225124}
         m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1463634566}
+        m_MethodName: LoadEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -56056,7 +56103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660107210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2919788, y: 0.8750882, z: -23.15512}
+  m_LocalPosition: {x: -2.2919788, y: 0, z: -23.15512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 476406574}

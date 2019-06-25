@@ -40,4 +40,39 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static void SaveEnemy(AllEnemy allEnemy)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        //string path = Application.persistentDataPath + "/player.fun";
+        string path = "enemy.fun";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+
+        EnemyData data = new EnemyData(allEnemy);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    public static EnemyData LoadEnemy()
+    {
+        //string path = Application.persistentDataPath + "/player.fun";
+        string path = "enemy.fun";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            EnemyData data = formatter.Deserialize(stream) as EnemyData;
+            stream.Close();
+
+            return data;
+        }
+        else
+        {
+            Debug.LogError("Save file not found in" + path);
+            return null;
+        }
+    }
 }

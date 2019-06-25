@@ -26,7 +26,6 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-        Debug.Log(player.GetComponent<Animator>().GetBool("Die"));
         if(player.GetComponent<Animator>().GetBool("Die") == true)
         {
             GameOver();
@@ -71,6 +70,7 @@ public class PauseMenu : MonoBehaviour
         //player.GetComponent<Animator>().SetBool("Die", false);
         player.GetComponent<Animator>().Rebind();
         PlayerPrefs.SetString("Load", "true");
+        PlayerPrefs.SetString("Load1", "true");
         Cursor.lockState = CursorLockMode.None;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

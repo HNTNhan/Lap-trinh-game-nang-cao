@@ -120,9 +120,11 @@
     <Compile Include="Assets\Scripts\CharacterScripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\EnemyScript\AggroDetection.cs" />
+    <Compile Include="Assets\Scripts\EnemyScript\AllEnemy.cs" />
     <Compile Include="Assets\Scripts\EnemyScript\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyScript\Enemy1.cs" />
     <Compile Include="Assets\Scripts\EnemyScript\Enemy2.cs" />
+    <Compile Include="Assets\Scripts\EnemyScript\EnemyData.cs" />
     <Compile Include="Assets\Scripts\EnemyScript\EnemyMoment.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />

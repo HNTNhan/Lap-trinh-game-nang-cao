@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AggroDetection
+    - AllEnemy
     - CameraController
     - CharacterMovement
     - Cinemachine.CinemachineBrain
@@ -15,9 +16,11 @@ ScriptsOnlyBuild:
     - EnemyMoment
     - Gun
     - Health
+    - HealthBar
     - MainMenu
     - PauseMenu
     - Player
+    - UIScript
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -42,10 +45,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -100,49 +101,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10962}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11182}
+      Script: {instanceID: 11184}
     - Class: 114
-      Script: {instanceID: 11238}
+      Script: {instanceID: 11240}
     - Class: 114
-      Script: {instanceID: 11494}
+      Script: {instanceID: 11496}
     - Class: 114
-      Script: {instanceID: 11580}
+      Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 11592}
+      Script: {instanceID: 11594}
     - Class: 114
-      Script: {instanceID: 11766}
+      Script: {instanceID: 11768}
     - Class: 114
-      Script: {instanceID: 11780}
+      Script: {instanceID: 11782}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12066}
+      Script: {instanceID: 12058}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12070}
     - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 12190}
     - Class: 114
-      Script: {instanceID: 12310}
+      Script: {instanceID: 12290}
     - Class: 114
-      Script: {instanceID: 12446}
+      Script: {instanceID: 12314}
     - Class: 114
-      Script: {instanceID: 12660}
+      Script: {instanceID: 12452}
     - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12518}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 12668}
     - Class: 114
-      Script: {instanceID: 12960}
+      Script: {instanceID: 12708}
     - Class: 114
-      Script: {instanceID: 13158}
+      Script: {instanceID: 12924}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 12948}
     - Class: 114
-      Script: {instanceID: 13454}
+      Script: {instanceID: 12970}
     - Class: 114
-      Script: {instanceID: 276554}
+      Script: {instanceID: 13168}
+    - Class: 114
+      Script: {instanceID: 13430}
+    - Class: 114
+      Script: {instanceID: 13464}
+    - Class: 114
+      Script: {instanceID: 23564}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -215,45 +222,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11010}
     - Class: 114
-      Script: {instanceID: 11114}
-    - Class: 114
       Script: {instanceID: 11116}
     - Class: 114
-      Script: {instanceID: 11182}
+      Script: {instanceID: 11118}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 11184}
     - Class: 114
-      Script: {instanceID: 11228}
+      Script: {instanceID: 11198}
     - Class: 114
-      Script: {instanceID: 11238}
+      Script: {instanceID: 11230}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11240}
     - Class: 114
-      Script: {instanceID: 11588}
+      Script: {instanceID: 11456}
     - Class: 114
-      Script: {instanceID: 11766}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 11804}
+      Script: {instanceID: 11768}
     - Class: 114
-      Script: {instanceID: 12230}
+      Script: {instanceID: 11806}
     - Class: 114
-      Script: {instanceID: 12310}
+      Script: {instanceID: 12234}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12314}
     - Class: 114
-      Script: {instanceID: 12618}
+      Script: {instanceID: 12606}
     - Class: 114
-      Script: {instanceID: 12744}
+      Script: {instanceID: 12626}
     - Class: 114
-      Script: {instanceID: 12874}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 12960}
+      Script: {instanceID: 12882}
     - Class: 114
-      Script: {instanceID: 13182}
+      Script: {instanceID: 12970}
     - Class: 114
-      Script: {instanceID: 13318}
+      Script: {instanceID: 13192}
     - Class: 114
-      Script: {instanceID: 13454}
+      Script: {instanceID: 13328}
+    - Class: 114
+      Script: {instanceID: 13464}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -473,7 +480,7 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: 32659ca67bea1b34a6fb4b4033e6e300
+      Hash: 1265bf9ddb791e5ab2b97d891f9261cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -671,6 +678,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 0b7c41ef2047d297b76c685ac1521fcb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIScript
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -813,6 +826,12 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkStartPosition
+  - hash:
+      serializedVersion: 2
+      Hash: 70a90e0af3503233c005c9647332248d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PauseMenu
   - hash:
       serializedVersion: 2
       Hash: ff88ee9a3f9291bdaaf1cebc9d2c430b
@@ -1005,6 +1024,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Analytics.DataPrivacy.dll
     namespaceName: UnityEngine.Analytics
     className: DataPrivacyButton
+  - hash:
+      serializedVersion: 2
+      Hash: c70ac8696c6e6de8cfddefb2f9507c4a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
   - hash:
       serializedVersion: 2
       Hash: 27e5341178f188b89bdc6495710b590c
@@ -1283,16 +1308,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 05ed08e8afc62a75a76487fe97058e0b
+      Hash: 0b15bb3d08b3c5d142c4800b033e2efe
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerData
-  - hash:
-      serializedVersion: 2
-      Hash: f8111ca4557fb20e522c646346893e0a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PauseMenu
+    className: AllEnemy
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

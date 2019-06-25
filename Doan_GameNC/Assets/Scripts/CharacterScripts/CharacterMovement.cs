@@ -14,8 +14,11 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float turnSpeed = 150f;
 
+    private int check;
+
     private void Awake()
     {
+        check = 0;
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
 
@@ -26,7 +29,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if(PlayerPrefs.GetString("Load") == "true")
         {
-            PlayerPrefs.SetString("Load", "false");
+            check++;
+            if (check == 2)
+            {
+                check = 0;
+                PlayerPrefs.SetString("Load", "false");
+            }
             return;
         }
         if (animator.GetBool("Die")) return;

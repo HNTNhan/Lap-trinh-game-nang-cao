@@ -29,6 +29,11 @@ public class EnemyMoment : MonoBehaviour
     {
         if(target != null)
         {
+            if (PlayerPrefs.GetString("Load1") == "true")
+            {
+                PlayerPrefs.SetString("Load1", "false");
+                return;
+            }
             if (!animator.GetCurrentAnimatorStateInfo(0).IsName("attack") && !animator.GetBool("Die"))
             {
                 navMeshAgent.SetDestination(target.position);

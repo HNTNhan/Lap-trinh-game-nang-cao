@@ -51,7 +51,7 @@ public class Enemy2 : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Dying"))
             {
                 checkTime += Time.deltaTime;
-                if (checkTime >= 4) GetComponent<Health>().Die();
+                if (checkTime >= 2) GetComponent<Health>().Die();
             }
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
             {

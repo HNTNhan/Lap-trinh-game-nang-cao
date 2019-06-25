@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         health.SetCurrentHealth(data.health);
         maxAmmo = data.maxAmmo;
         currentAmmo = data.currentAmmo;
-
+        score = data.score;
         Vector3 position = new Vector3(data.position[0], data.position[1], data.position[2]);
         transform.position = position;
 

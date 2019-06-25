@@ -10,12 +10,14 @@ public class PlayerData
     public float[] rotation;
     public int maxAmmo;
     public int currentAmmo;
+    public int score;
 
     public PlayerData(Player player)
     {
         health = player.GetCurrentHealth();
         maxAmmo = player.GetMaxAmmo();
         currentAmmo = player.GetCurrentAmmo();
+        score = player.GetScore();
 
         position = new float[3];
         position[0] = player.transform.position.x;
