@@ -28,8 +28,8 @@ public class AllEnemy : MonoBehaviour
                 if (allEnemy[j].name == data.name[i])
                 {
                     allEnemy[j].SetActive(true);
+                    allEnemy[j].GetComponent<Health>().SetCurrentHealth(data.health[i]);
                     allEnemy[j].GetComponentInChildren<Animator>().Rebind();
-                    Debug.Log(allEnemy[j].GetComponentInChildren<Animator>().GetBool("Die"));
                     Vector3 position = new Vector3(data.position[i, 0], data.position[i, 1], data.position[i, 2]);
                     allEnemy[j].GetComponent<Transform>().position = position;
                     break;
