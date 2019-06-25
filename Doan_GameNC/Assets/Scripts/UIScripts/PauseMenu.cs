@@ -8,7 +8,9 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPause = false;
     public GameObject pauseMenuUI;
+    public GameObject gameOverMenu;
     public GameObject CMvcam;
+    public GameObject player;
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +26,21 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+        Debug.Log(player.GetComponent<Animator>().GetBool("Die"));
+        if(player.GetComponent<Animator>().GetBool("Die") == true)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("GameOver");
+        gameOverMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        CMvcam.SetActive(false);
     }
 
     public void Pause()
@@ -50,6 +67,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Load()
     {
+
+        //player.GetComponent<Animator>().SetBool("Die", false);
+        player.GetComponent<Animator>().Rebind();
         PlayerPrefs.SetString("Load", "true");
         Cursor.lockState = CursorLockMode.None;
         Cursor.lockState = CursorLockMode.Locked;
@@ -57,6 +77,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPause = false;
         CMvcam.SetActive(true);
         pauseMenuUI.SetActive(false);
+        gameOverMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 

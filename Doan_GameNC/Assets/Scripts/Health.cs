@@ -63,6 +63,10 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        gameObject.SetActive(false);
+        if(gameObject.name == "Player")
+        {
+            animator.SetBool("Die", true);
+        }
+        else gameObject.SetActive(false);
     }
 }

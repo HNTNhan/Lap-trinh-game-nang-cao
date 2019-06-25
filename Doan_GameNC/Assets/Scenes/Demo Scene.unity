@@ -19625,7 +19625,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 865351131}
+  gameOverMenu: {fileID: 2044331844}
   CMvcam: {fileID: 263265311}
+  player: {fileID: 2055854317}
 --- !u!4 &579597976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4533943726500818, guid: 2224b63330275e5478ef024b2913f937,
