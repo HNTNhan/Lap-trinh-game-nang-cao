@@ -41,6 +41,11 @@ public class Health : MonoBehaviour
         currentHealth = health;
     }
 
+    public void IncreaseHealth(int health)
+    {
+        startingHealth += health;
+    }
+
     public void TakeDamage(int damageAmount)
     {
 

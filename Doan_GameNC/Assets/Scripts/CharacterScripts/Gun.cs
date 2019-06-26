@@ -6,8 +6,8 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [SerializeField]
-    [Range(0.1f, 1.5f)]
-    private float fireRate = 0.8f;
+    [Range(0.01f, 1f)]
+    private float fireRate = 1f;
 
     [SerializeField]
     [Range(1,10)]
@@ -34,6 +34,16 @@ public class Gun : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
+    public float GetFireRate()
+    {
+        return fireRate;
+    }
+
+    public int GetDamage()
+    {
+        return damage;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +66,16 @@ public class Gun : MonoBehaviour
                 FireGun();
             }
         }
+    }
+
+    public void DecreaseFireRate(float num)
+    {
+        fireRate = fireRate * (1 - num);
+    }
+
+    public void IncreaseDamge(int num)
+    {
+        damage += num;
     }
 
     IEnumerator Reload()
