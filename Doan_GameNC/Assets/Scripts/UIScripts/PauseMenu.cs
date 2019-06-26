@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject CMvcam;
     public GameObject player;
+    public GameObject newGameMenu;
     // Update is called once per frame
     void Update()
     {
