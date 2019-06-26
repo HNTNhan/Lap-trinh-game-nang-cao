@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -43,7 +44,18 @@ public class Player : MonoBehaviour
 
     public void SavePlayer()
     {
-        SaveSystem.SavePlayer(this);
+        try
+        {
+            SaveSystem.SavePlayer(this);
+        }
+        catch (System.Exception e)
+        {
+            PlayerPrefs.SetString("Save", "fail");
+            EditorUtility.DisplayDialog("Save Game", "Save Game Fail \n" + e.Message, "OK");
+            return;
+        }
+        PlayerPrefs.SetString("Save", "true");
+        //EditorUtility.DisplayDialog("Save Game", "Save Game Success", "OK");
     }
 
     public void LoadPlayer()

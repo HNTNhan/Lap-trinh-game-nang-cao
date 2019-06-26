@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AllEnemy : MonoBehaviour
@@ -14,8 +15,21 @@ public class AllEnemy : MonoBehaviour
 
     public void SaveEnemy()
     {
-        SaveSystem.SaveEnemy(this);
-
+        if (PlayerPrefs.GetString("Save") == "fail")
+        {
+            PlayerPrefs.SetString("Save", "");
+            return;
+        }
+        try
+        {
+            SaveSystem.SaveEnemy(this);
+        }
+        catch (System.Exception e)
+        {
+            EditorUtility.DisplayDialog("Save Game", "Save Game Fail \n" + e.Message, "OK");
+            return;
+        }
+        EditorUtility.DisplayDialog("Save Game", "Save Game Success", "OK");
     }
     public void LoadEnemy()
     {
