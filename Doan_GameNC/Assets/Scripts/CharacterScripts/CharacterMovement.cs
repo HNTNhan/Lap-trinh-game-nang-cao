@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,15 +9,24 @@ public class CharacterMovement : MonoBehaviour
     private Animator animator;
 
     [SerializeField]
-    private float forwardMoveSpeed = 7.5f;
+    private float forwardMoveSpeed = 7f;
     [SerializeField]
     private float backwardMoveSpeed = 3;
     [SerializeField]
     private float turnSpeed = 150f;
+    [SerializeField]
+    private float maxStamina = 5;
+    private float curStamina;
+    private bool isRecoverStamina = false;
+
+    private float moveSpeed;
 
     private int check;
     private float checkRotate;
     private float rotate;
+
+    public event Action<float> OnStaminaPctChanged = delegate { };
+
     private void Awake()
     {
         check = 0;
@@ -26,6 +36,8 @@ public class CharacterMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         checkRotate = Input.GetAxis("Mouse X");
         rotate = Input.GetAxis("Mouse X");
+
+        curStamina = maxStamina;
     }
 
     void Update()
@@ -44,6 +56,31 @@ public class CharacterMovement : MonoBehaviour
         
         var vertical = Input.GetAxis("Vertical");
         var horizontal = Input.GetAxis("Horizontal");
+
+        if (vertical > 0)
+        {
+            if (Input.GetKey(KeyCode.LeftShift) && !isRecoverStamina)
+            {
+                moveSpeed = forwardMoveSpeed * 0.8f; ;
+                vertical *= 2f;
+                animator.SetLayerWeight(1, 0);
+                animator.SetBool("IsRunning", true);
+            }
+
+            else
+            {
+                moveSpeed = forwardMoveSpeed;
+                animator.SetLayerWeight(1, 1);
+                animator.SetBool("IsRunning", false);
+            }
+
+        }
+        else
+        {
+            animator.SetBool("IsRunning", false);
+            moveSpeed = backwardMoveSpeed;
+        }
+
 
         var movement = new Vector3(horizontal, 0, vertical);
 
@@ -69,13 +106,27 @@ public class CharacterMovement : MonoBehaviour
             }
         }
 
-        if(vertical != 0)
-        {
-            float moveSpeed = vertical > 0 ? forwardMoveSpeed : backwardMoveSpeed;
+        characterController.SimpleMove(transform.forward * moveSpeed * vertical);
+        characterController.SimpleMove(transform.right * moveSpeed * horizontal);
 
-            characterController.SimpleMove(transform.forward * moveSpeed * vertical);
-            characterController.SimpleMove(transform.right * moveSpeed * horizontal);
+        if (animator.GetBool("IsRunning"))
+        {
+            curStamina -= Time.deltaTime;
+
+            if (curStamina < 0)
+            {
+                isRecoverStamina = true;
+                curStamina = 0;
+                animator.SetBool("IsRunning", false);
+            }
         }
-        characterController.SimpleMove(transform.right * backwardMoveSpeed * horizontal);
+        else if (curStamina < maxStamina)
+        {
+            curStamina += Time.deltaTime;
+            if (curStamina >= maxStamina / 5)
+                isRecoverStamina = false;
+        }
+        float curStaminaPct = (float)curStamina / (float)maxStamina;
+        OnStaminaPctChanged(curStaminaPct);
     }
 }

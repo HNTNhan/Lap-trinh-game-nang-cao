@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
     private ParticleSystem muzzleParticle;
 
     [SerializeField]
-    private AudioSource gunfireSound;
+    private AudioSource[] gunSound;
 
     private float timer;
 
@@ -64,7 +64,7 @@ public class Gun : MonoBehaviour
             }
             check = false;
         }
-        if(isReloading)
+        if(isReloading || animator.GetBool("IsRunning"))
         {
             return;
         }
@@ -97,6 +97,7 @@ public class Gun : MonoBehaviour
     {
         isReloading = true;
         animator.Play("Reload");
+        gunSound[1].Play();
         yield return new WaitForSeconds(reloadTime);
 
         player.Reload();
@@ -109,7 +110,7 @@ public class Gun : MonoBehaviour
         checkTime = 0;
         check = true;
         muzzleParticle.Play();
-        gunfireSound.Play();
+        gunSound[0].Play();
         animator.Play("Shoot");
 
         player.ReduceAmmo();
@@ -148,11 +149,17 @@ public class Gun : MonoBehaviour
             if (health != null)
             {
                 health.TakeDamage(damage);
-                if(hitInfo.collider.tag=="Enemy")
+                var enemy = hitInfo.collider;
+                if(enemy.tag=="Enemy")
                 {
                     if(health.GetCurrentHealth() == 0)
                     {
-                        player.IncreaseScore(100);
+                        if(enemy.gameObject.name=="Enemy")
+                            player.IncreaseScore(100);
+                        if (enemy.gameObject.name == "Enemy1")
+                            player.IncreaseScore(150);
+                        if (enemy.gameObject.name == "Enemy2")
+                            player.IncreaseScore(200);
                     }
                 }
             }
