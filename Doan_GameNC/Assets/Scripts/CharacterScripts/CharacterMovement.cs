@@ -15,7 +15,8 @@ public class CharacterMovement : MonoBehaviour
     private float turnSpeed = 150f;
 
     private int check;
-
+    private float checkRotate;
+    private float rotate;
     private void Awake()
     {
         check = 0;
@@ -23,6 +24,8 @@ public class CharacterMovement : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         Cursor.lockState = CursorLockMode.Locked;
+        checkRotate = Input.GetAxis("Mouse X");
+        rotate = Input.GetAxis("Mouse X");
     }
 
     void Update()
@@ -38,7 +41,7 @@ public class CharacterMovement : MonoBehaviour
             return;
         }
         if (animator.GetBool("Die")) return;
-        var horizontalMouse = Input.GetAxis("Mouse X");
+        
         var vertical = Input.GetAxis("Vertical");
         var horizontal = Input.GetAxis("Horizontal");
 
@@ -47,7 +50,24 @@ public class CharacterMovement : MonoBehaviour
         animator.SetFloat("SpeedY", vertical);
         animator.SetFloat("SpeedX", horizontal);
 
-        transform.Rotate(Vector3.up, horizontalMouse * turnSpeed * Time.deltaTime);
+        if(Input.GetAxis("Mouse X") != checkRotate)
+        {
+            var horizontalMouse = Input.GetAxis("Mouse X");
+            transform.Rotate(Vector3.up, horizontalMouse * turnSpeed * Time.deltaTime);
+            rotate = Input.GetAxis("Mouse X");
+            checkRotate = Input.GetAxis("Mouse X");
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.L))
+            {
+                transform.Rotate(Vector3.up, 1f);
+            }
+            if (Input.GetKey(KeyCode.J))
+            {
+                transform.Rotate(Vector3.up, -1f);
+            }
+        }
 
         if(vertical != 0)
         {

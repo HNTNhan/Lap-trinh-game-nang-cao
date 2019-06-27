@@ -60,7 +60,7 @@ public class Gun : MonoBehaviour
         }
         if (timer>=fireRate)
         {
-            if(Input.GetButton("Fire1"))
+            if(Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
             {
                 timer = 0f;
                 FireGun();
