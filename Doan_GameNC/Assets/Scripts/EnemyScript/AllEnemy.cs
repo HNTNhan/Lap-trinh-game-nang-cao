@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class AllEnemy : MonoBehaviour
 {
-    public GameObject[] allEnemy; 
+    public GameObject[] allEnemy;
+    public float volume;
+    public string difficulty;
 
     private void OnEnable()
     {
+        volume = PlayerPrefs.GetFloat("Volume");
+        difficulty = PlayerPrefs.GetString("Difficulty");
         allEnemy = GameObject.FindGameObjectsWithTag("Enemy");
         if (PlayerPrefs.GetString("Load") == "true") LoadEnemy();
     }
@@ -42,6 +46,7 @@ public class AllEnemy : MonoBehaviour
                 if (allEnemy[j].name == data.name[i])
                 {
                     allEnemy[j].SetActive(true);
+                    allEnemy[j].GetComponent<AudioSource>().volume = data.volume;
                     allEnemy[j].GetComponent<Health>().SetCurrentHealth(data.health[i]);
                     allEnemy[j].GetComponent<Health>().TakeDamage(0);
                     allEnemy[j].GetComponent<Enemy>().checkTime = 0;

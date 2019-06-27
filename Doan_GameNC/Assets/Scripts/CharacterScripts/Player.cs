@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Vector3 position;
     private Quaternion rotation;
     private Animator animator;
+    private float volume;
 
     public int GetCurrentHealth()
     {
@@ -32,14 +33,28 @@ public class Player : MonoBehaviour
         return score;
     }
 
+    public float GetVolume()
+    {
+        return volume;
+    }
+
+    public void SetVolume(float volume)
+    {
+        this.volume = volume;
+    }
 
     private void OnEnable()
     {
+        volume = PlayerPrefs.GetFloat("Volume");
         Cursor.visible = false;
         health = GetComponent<Health>();
         currentAmmo = maxAmmo;
         animator = GetComponentInChildren<Animator>();
         if (PlayerPrefs.GetString("Load") == "true") LoadPlayer();
+        else
+        {
+            GetComponent<AudioSource>().volume = volume;
+        }
     }
 
     public void SavePlayer()
@@ -55,13 +70,12 @@ public class Player : MonoBehaviour
             return;
         }
         PlayerPrefs.SetString("Save", "true");
-        //EditorUtility.DisplayDialog("Save Game", "Save Game Success", "OK");
     }
 
     public void LoadPlayer()
     {
-        
         PlayerData data = SaveSystem.LoadPlayer();
+        GetComponent<AudioSource>().volume = data.volume;
         health.SetCurrentHealth(data.health);
         TakeDamage(0);
         maxAmmo = data.maxAmmo;
