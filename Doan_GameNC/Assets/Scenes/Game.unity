@@ -8201,7 +8201,7 @@ GameObject:
   - component: {fileID: 224459025}
   - component: {fileID: 224459032}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy1 (4)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18237,7 +18237,7 @@ GameObject:
   - component: {fileID: 426831301}
   - component: {fileID: 426831308}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy1 (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30223,7 +30223,7 @@ GameObject:
   - component: {fileID: 722653905}
   - component: {fileID: 722653906}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy1 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57961,7 +57961,7 @@ GameObject:
   - component: {fileID: 1332742751}
   - component: {fileID: 1332742758}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63975,7 +63975,7 @@ GameObject:
   - component: {fileID: 1465654203}
   - component: {fileID: 1465654210}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy2 (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69395,7 +69395,7 @@ GameObject:
   - component: {fileID: 1597598227}
   - component: {fileID: 1597598226}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy2 (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70202,7 +70202,7 @@ GameObject:
   - component: {fileID: 1611196789}
   - component: {fileID: 1611196796}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72740,7 +72740,7 @@ GameObject:
   - component: {fileID: 1660107218}
   - component: {fileID: 1660107219}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74270,7 +74270,7 @@ GameObject:
   - component: {fileID: 1679034116}
   - component: {fileID: 1679034123}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy1 (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86599,7 +86599,7 @@ GameObject:
   - component: {fileID: 1931549972}
   - component: {fileID: 1931549979}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy2 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
