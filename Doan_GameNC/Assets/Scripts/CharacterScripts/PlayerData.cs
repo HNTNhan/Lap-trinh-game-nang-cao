@@ -22,7 +22,8 @@ public class PlayerData
         currentAmmo = player.GetCurrentAmmo();
         score = player.GetScore();
         volume = player.GetVolume();
-        scene = 1;
+        if (player.GetScene() == "Game") scene = 1;
+        else scene = 2;
 
         position = new float[3];
         position[0] = player.transform.position.x;
