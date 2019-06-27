@@ -31,7 +31,6 @@ public class PlayerData
         rotation[0] = player.transform.rotation.x;
         rotation[1] = player.transform.rotation.y;
         rotation[2] = player.transform.rotation.z;
-
     }
 
 
