@@ -27,9 +27,15 @@ public class Gun : MonoBehaviour
     private Animator animator;
 
     private Player player;
+    private GameObject[] allEnemy;
+    private bool check;
+    private float checkTime;
 
     private void Awake()
     {
+        checkTime = 0;
+        check = false;
+        allEnemy = GameObject.FindGameObjectsWithTag("Enemy");
         player = GetComponent<Player>();
         animator = GetComponentInChildren<Animator>();
     }
@@ -49,6 +55,15 @@ public class Gun : MonoBehaviour
     {
         if (animator.GetBool("Die")) return;
         timer += Time.deltaTime;
+        if(check) checkTime += Time.deltaTime;
+        if (checkTime >= 5)
+        {
+            for (int i = 0; i < allEnemy.Length; i++)
+            {
+                allEnemy[i].GetComponent<SphereCollider>().radius = 20;
+            }
+            check = false;
+        }
         if(isReloading)
         {
             return;
@@ -91,6 +106,8 @@ public class Gun : MonoBehaviour
     private void FireGun()
     {
         if (PauseMenu.GameIsPause) return;
+        checkTime = 0;
+        check = true;
         muzzleParticle.Play();
         gunfireSound.Play();
         animator.Play("Shoot");
@@ -99,15 +116,36 @@ public class Gun : MonoBehaviour
 
         Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
 
-        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 2f);
+        Debug.DrawRay(ray.origin, ray.direction * 50, Color.red, 2f);
 
         RaycastHit hitInfo;
 
-        if(Physics.Raycast(ray,out hitInfo, 100))
+        if(Physics.Raycast(ray,out hitInfo, 50))
         {
             var health = hitInfo.collider.GetComponent<Health>();
+
+            for (int i = 0; i < allEnemy.Length; i++)
+            {
+                Debug.Log(Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, hitInfo.collider.GetComponent<Transform>().position));
+                Debug.Log(hitInfo.collider.name);
+                if(Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, hitInfo.collider.GetComponent<Transform>().position) >= 0 
+                    && Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, hitInfo.collider.GetComponent<Transform>().position) < 15)
+                {
+                    allEnemy[i].GetComponent<SphereCollider>().radius = 60;
+                }
+                else if(Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, hitInfo.collider.GetComponent<Transform>().position) >= 15
+                    && Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, hitInfo.collider.GetComponent<Transform>().position) < 30)
+                {
+                    allEnemy[i].GetComponent<SphereCollider>().radius = 30;
+                }
+                else if(Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, player.GetComponent<Transform>().position) <= 50)
+                {
+                    allEnemy[i].GetComponent<SphereCollider>().radius = 30;
+                }
             
-            if(health != null)
+            }
+
+            if (health != null)
             {
                 health.TakeDamage(damage);
                 if(hitInfo.collider.tag=="Enemy")
