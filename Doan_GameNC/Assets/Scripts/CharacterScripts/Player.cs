@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     private Quaternion rotation;
     private Animator animator;
     private float volume;
+    private string scene;
 
     public int GetCurrentHealth()
     {
@@ -43,8 +45,14 @@ public class Player : MonoBehaviour
         this.volume = volume;
     }
 
+    public string GetScene()
+    {
+        return scene;
+    }
+
     private void OnEnable()
     {
+        scene = SceneManager.GetActiveScene().name;
         volume = PlayerPrefs.GetFloat("Volume");
         Cursor.visible = false;
         health = GetComponent<Health>();
@@ -81,6 +89,7 @@ public class Player : MonoBehaviour
         maxAmmo = data.maxAmmo;
         currentAmmo = data.currentAmmo;
         score = data.score;
+
         Vector3 position = new Vector3(data.position[0], data.position[1], data.position[2]);
         transform.position = position;
 

@@ -10,9 +10,12 @@ public class EnemyMoment : MonoBehaviour
     private AggroDetection aggroDetection;
     private Transform target;
     private Vector3 transform_child;
-
+    private GameObject[] allEnemy;
+    private int check;
     private void Awake()
     {
+        check = 0;
+        allEnemy = GameObject.FindGameObjectsWithTag("Enemy");
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         transform_child = transform.GetChild(0).GetComponent<Transform>().position;
