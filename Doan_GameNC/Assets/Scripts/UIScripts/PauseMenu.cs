@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject CMvcam;
     public GameObject player;
-    public GameObject newGameMenu;
+    public GameObject slider;
+    public GameObject[] allEnemy;
+
     // Update is called once per frame
     void Update()
     {
@@ -79,6 +82,20 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         gameOverMenu.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void Volume()
+    {
+        if (slider.GetComponent<Slider>().value != player.GetComponentInParent<AudioSource>().volume)
+        {
+            player.GetComponentInParent<AudioSource>().volume = slider.GetComponent<Slider>().value;
+            player.GetComponentInParent<Player>().SetVolume(slider.GetComponent<Slider>().value);
+            allEnemy = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int j = 0; j < allEnemy.Length; j++)
+            {
+                allEnemy[j].GetComponent<AudioSource>().volume = slider.GetComponent<Slider>().value;
+            }
+        }
     }
 
     public void QuitGame()

@@ -7,20 +7,30 @@ public class Health : MonoBehaviour
     private int startingHealth = 5;
     private int currentHealth;
     private Animator animator;
+    private float difficulty;
 
     public event Action<float> OnHealthPctChanged = delegate { };
 
     private void OnEnable()
     {
-        if(transform.GetChild(0).name == "Zombie") currentHealth = startingHealth;
+        GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Volume");
+        if (PlayerPrefs.GetString("Difficulty") == "easy") difficulty = 1;
+        else if (PlayerPrefs.GetString("Difficulty") == "normal") difficulty = 1.5f;
+        else if (PlayerPrefs.GetString("Difficulty") == "hard") difficulty = 2f;
+
+        if (transform.GetChild(0).name == "Zombie")
+        {
+            startingHealth = (int)Math.Round((startingHealth) * difficulty);
+            currentHealth = startingHealth;
+        }
         if (transform.GetChild(0).name == "Zombie1")
         {
-            startingHealth -= 1;
-            currentHealth = startingHealth;
+            startingHealth = (int)Math.Round((startingHealth -1) * difficulty);
+            currentHealth = startingHealth ;
         }
         if (transform.GetChild(0).name == "Zombie2")
         {
-            startingHealth += 2;
+            startingHealth = (int)Math.Round((startingHealth + 1) * difficulty);
             currentHealth = startingHealth;
         }
         if (gameObject.name == "Player")

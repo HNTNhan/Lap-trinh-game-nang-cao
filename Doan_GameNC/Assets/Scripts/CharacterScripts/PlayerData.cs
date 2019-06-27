@@ -11,6 +11,8 @@ public class PlayerData
     public int maxAmmo;
     public int currentAmmo;
     public int score;
+    public float volume;
+    public string difficulty;
 
     public PlayerData(Player player)
     {
@@ -18,6 +20,7 @@ public class PlayerData
         maxAmmo = player.GetMaxAmmo();
         currentAmmo = player.GetCurrentAmmo();
         score = player.GetScore();
+        volume = player.GetVolume();
 
         position = new float[3];
         position[0] = player.transform.position.x;
@@ -28,7 +31,6 @@ public class PlayerData
         rotation[0] = player.transform.rotation.x;
         rotation[1] = player.transform.rotation.y;
         rotation[2] = player.transform.rotation.z;
-
     }
 
 
