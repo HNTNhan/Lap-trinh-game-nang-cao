@@ -74,7 +74,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Load()
     {
-        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
         player.GetComponent<Animator>().Rebind();
         PlayerPrefs.SetString("Load", "true");
         PlayerPrefs.SetString("Load1", "true");
@@ -90,10 +90,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Volume()
     {
-        Debug.Log("1");
         if (slider.GetComponent<Slider>().value != player.GetComponentInParent<AudioSource>().volume)
         {
-            Debug.Log("2");
             player.GetComponentInParent<AudioSource>().volume = slider.GetComponent<Slider>().value;
             player.GetComponentInParent<Player>().SetVolume(slider.GetComponent<Slider>().value);
             allEnemy = GameObject.FindGameObjectsWithTag("Enemy");

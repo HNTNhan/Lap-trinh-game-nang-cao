@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject slider;
     public GameObject optionMenu;
     public GameObject[] difficulty;
+    private int scene;
 
     public void Awake()
     {
@@ -37,9 +38,16 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Volume", slider.GetComponent<Slider>().value);
         PlayerPrefs.SetString("Load", "true");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        LoadScene();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
     }
 
+    public void LoadScene()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        scene = data.scene;
+
+    }
     public void Difficulty(string level)
     {
         PlayerPrefs.SetString("Difficulty", level);

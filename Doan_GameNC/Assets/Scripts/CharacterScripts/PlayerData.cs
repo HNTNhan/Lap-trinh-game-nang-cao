@@ -13,6 +13,7 @@ public class PlayerData
     public int score;
     public float volume;
     public string difficulty;
+    public int scene;
 
     public PlayerData(Player player)
     {
@@ -21,6 +22,8 @@ public class PlayerData
         currentAmmo = player.GetCurrentAmmo();
         score = player.GetScore();
         volume = player.GetVolume();
+        if (player.GetScene() == "Game") scene = 1;
+        else scene = 2;
 
         position = new float[3];
         position[0] = player.transform.position.x;

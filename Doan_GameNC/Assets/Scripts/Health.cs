@@ -33,6 +33,11 @@ public class Health : MonoBehaviour
             startingHealth = (int)Math.Round((startingHealth + 1) * difficulty);
             currentHealth = startingHealth;
         }
+        if (transform.GetChild(0).name == "Zombie3")
+        {
+            startingHealth = (int)Math.Round((startingHealth *3) * difficulty);
+            currentHealth = startingHealth;
+        }
         if (gameObject.name == "Player")
         {
             startingHealth *= 2;

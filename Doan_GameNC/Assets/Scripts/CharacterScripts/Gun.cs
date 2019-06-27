@@ -127,8 +127,6 @@ public class Gun : MonoBehaviour
 
             for (int i = 0; i < allEnemy.Length; i++)
             {
-                Debug.Log(Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, hitInfo.collider.GetComponent<Transform>().position));
-                Debug.Log(hitInfo.collider.name);
                 if(Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, hitInfo.collider.GetComponent<Transform>().position) >= 0 
                     && Vector3.Distance(allEnemy[i].GetComponent<Transform>().position, hitInfo.collider.GetComponent<Transform>().position) < 15)
                 {

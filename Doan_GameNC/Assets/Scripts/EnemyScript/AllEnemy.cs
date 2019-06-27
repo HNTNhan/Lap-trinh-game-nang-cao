@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AllEnemy : MonoBehaviour
 {
     public GameObject[] allEnemy;
     public float volume;
     public string difficulty;
+    private int check;
 
     private void OnEnable()
     {
+        check = 0;
         volume = PlayerPrefs.GetFloat("Volume");
         difficulty = PlayerPrefs.GetString("Difficulty");
         allEnemy = GameObject.FindGameObjectsWithTag("Enemy");
@@ -35,6 +38,7 @@ public class AllEnemy : MonoBehaviour
         }
         EditorUtility.DisplayDialog("Save Game", "Save Game Success", "OK");
     }
+
     public void LoadEnemy()
     {
         EnemyData data = SaveSystem.LoadEnemy();
@@ -53,6 +57,7 @@ public class AllEnemy : MonoBehaviour
                     allEnemy[j].GetComponentInChildren<Animator>().Rebind();
                     Vector3 position = new Vector3(data.position[i, 0], data.position[i, 1], data.position[i, 2]);
                     allEnemy[j].GetComponent<Transform>().position = position;
+                    //allEnemy[j].GetComponent<NavMeshAgent>().SetDestination(position);
                     break;
                 }
                 if (i + 1 >= data.name.Length)
