@@ -23,11 +23,13 @@ public class PauseMenu : MonoBehaviour
         {
             if (GameIsPause)
             {
+                if (optionMenu.activeSelf) Volume();
                 Resume();
                 
             }
             else
             {
+                
                 Pause();
             }
         }
@@ -60,13 +62,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         GameIsPause = false;
         CMvcam.SetActive(true);
         pauseMenuUI.SetActive(false);
+        optionMenu.SetActive(false);
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Load()
@@ -87,8 +90,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Volume()
     {
+        Debug.Log("1");
         if (slider.GetComponent<Slider>().value != player.GetComponentInParent<AudioSource>().volume)
         {
+            Debug.Log("2");
             player.GetComponentInParent<AudioSource>().volume = slider.GetComponent<Slider>().value;
             player.GetComponentInParent<Player>().SetVolume(slider.GetComponent<Slider>().value);
             allEnemy = GameObject.FindGameObjectsWithTag("Enemy");

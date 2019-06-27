@@ -7,6 +7,24 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject slider;
+    public GameObject optionMenu;
+    public GameObject[] difficulty;
+
+    public void Awake()
+    {
+        PlayerPrefs.SetString("Difficulty", "easy");
+    }
+
+    public void Update()
+    {
+        if (optionMenu.activeSelf)
+        {
+            difficulty = GameObject.FindGameObjectsWithTag("Difficulty");
+            if (PlayerPrefs.GetString("Difficulty") == "easy") difficulty[0].GetComponent<Button>().Select();
+            else if (PlayerPrefs.GetString("Difficulty") == "normal") difficulty[1].GetComponent<Button>().Select();
+            else difficulty[2].GetComponent<Button>().Select();
+        }
+    }
 
     public void NewGame()
     {

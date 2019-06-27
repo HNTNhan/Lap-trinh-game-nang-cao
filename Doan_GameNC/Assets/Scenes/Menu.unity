@@ -296,7 +296,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 168991658}
+      - m_Target: {fileID: 375525277}
         m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
@@ -546,7 +546,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168991657}
-  - component: {fileID: 168991658}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -579,19 +578,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1.8, y: -58.8}
   m_SizeDelta: {x: 435, y: 563.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &168991658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168991656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea8206e399e52c64da74ec922b2d74d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 715116313}
 --- !u!1 &189980636
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +968,7 @@ GameObject:
   - component: {fileID: 227588403}
   m_Layer: 5
   m_Name: Easy
-  m_TagString: Untagged
+  m_TagString: Difficulty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1027,11 +1013,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.72445434, b: 0.3726415, a: 1}
+    m_NormalColor: {r: 0.20784314, g: 0.15294118, b: 0.15294118, a: 1}
+    m_HighlightedColor: {r: 0.99215686, g: 0.75686276, b: 0.4627451, a: 1}
     m_PressedColor: {r: 1, g: 0.56078434, b: 0, a: 1}
     m_SelectedColor: {r: 1, g: 0.56078434, b: 0, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1050,7 +1036,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168991658}
+      - m_Target: {fileID: 375525277}
         m_MethodName: Difficulty
         m_Mode: 5
         m_Arguments:
@@ -1076,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20784314, g: 0.15294118, b: 0.15294118, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1419,7 +1405,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168991658}
+      - m_Target: {fileID: 375525277}
         m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
@@ -1716,6 +1702,7 @@ GameObject:
   - component: {fileID: 375525275}
   - component: {fileID: 375525274}
   - component: {fileID: 375525273}
+  - component: {fileID: 375525277}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1808,6 +1795,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &375525277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375525272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8206e399e52c64da74ec922b2d74d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 715116313}
+  optionMenu: {fileID: 813774675}
+  difficulty: []
 --- !u!1 &376875090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +2451,7 @@ GameObject:
   - component: {fileID: 578941776}
   m_Layer: 5
   m_Name: Hard
-  m_TagString: Untagged
+  m_TagString: Difficulty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2494,8 +2496,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.72445434, b: 0.3726415, a: 1}
+    m_NormalColor: {r: 0.20784314, g: 0.15294118, b: 0.15294118, a: 1}
+    m_HighlightedColor: {r: 0.99215686, g: 0.75686276, b: 0.4627451, a: 1}
     m_PressedColor: {r: 1, g: 0.56078434, b: 0, a: 1}
     m_SelectedColor: {r: 1, g: 0.56078434, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2517,7 +2519,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168991658}
+      - m_Target: {fileID: 375525277}
         m_MethodName: Difficulty
         m_Mode: 5
         m_Arguments:
@@ -2543,7 +2545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20784314, g: 0.15294118, b: 0.15294118, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3204,7 +3206,7 @@ GameObject:
   - component: {fileID: 788730008}
   m_Layer: 5
   m_Name: Normal
-  m_TagString: Untagged
+  m_TagString: Difficulty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3249,8 +3251,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.72445434, b: 0.3726415, a: 1}
+    m_NormalColor: {r: 0.20784314, g: 0.15294118, b: 0.15294118, a: 1}
+    m_HighlightedColor: {r: 0.990566, g: 0.75866437, b: 0.4625756, a: 1}
     m_PressedColor: {r: 1, g: 0.56078434, b: 0, a: 1}
     m_SelectedColor: {r: 1, g: 0.56078434, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3272,7 +3274,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168991658}
+      - m_Target: {fileID: 375525277}
         m_MethodName: Difficulty
         m_Mode: 5
         m_Arguments:
@@ -3298,7 +3300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20784314, g: 0.15294118, b: 0.15294118, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4477,7 +4479,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1276303067}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 375525277}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1276303067
@@ -5627,7 +5640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7999878, y: -222.20001}
+  m_AnchoredPosition: {x: 1.7999878, y: -179}
   m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1779323291
