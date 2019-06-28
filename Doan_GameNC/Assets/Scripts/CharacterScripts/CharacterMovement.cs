@@ -85,12 +85,11 @@ public class CharacterMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift) && !isRecoverStamina)
             {
-                moveSpeed = forwardMoveSpeed * 0.8f; ;
+                moveSpeed = forwardMoveSpeed * 1.8f;
                 vertical *= 2f;
                 animator.SetLayerWeight(1, 0);
                 animator.SetBool("IsRunning", true);
             }
-
             else
             {
                 moveSpeed = forwardMoveSpeed;
