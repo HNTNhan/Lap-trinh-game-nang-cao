@@ -59,9 +59,10 @@ public class EnemyMoment : MonoBehaviour
             }
 
             float currentSpeed = navMeshAgent.velocity.magnitude;
-            if (gameObject.name == "Enemy1") currentSpeed *= 2;
             animator.SetFloat("Speed", currentSpeed);
-           
+            if (gameObject.name.Contains("Enemy1")) navMeshAgent.speed = 6.8f;
+            else if (gameObject.name.Contains("Enemy2")) navMeshAgent.speed = 6.3f;
+            else if (gameObject.name.Contains("Enemy3")) navMeshAgent.speed = 6.3f;
         } 
     }
 }

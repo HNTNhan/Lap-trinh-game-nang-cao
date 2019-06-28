@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent distance;
     bool check;
     bool attacked;
+    private float difficulty;
 
     private void Awake()
     {
@@ -101,7 +102,15 @@ public class Enemy : MonoBehaviour
     private void Attack()
     {
         checkTime = 0;
-        playerTarget.TakeDamage(1);
+
+        if (PlayerPrefs.GetString("Difficulty") == "easy") difficulty = 1;
+        else if (PlayerPrefs.GetString("Difficulty") == "normal") difficulty = 1.5f;
+        else if (PlayerPrefs.GetString("Difficulty") == "hard") difficulty = 2f;
+
+        if (gameObject.name.Contains("Enemy3")) playerTarget.TakeDamage((int)Math.Round(3 * difficulty - 1));
+        else if (gameObject.name.Contains("Enemy2")) playerTarget.TakeDamage((int)Math.Round(1 * difficulty));
+        else if (gameObject.name.Contains("Enemy1")) playerTarget.TakeDamage((int)Math.Round(1 * difficulty));
+        else if (gameObject.name.Contains("Enemy")) playerTarget.TakeDamage((int)Math.Round(2 * difficulty));
         //animator.SetBool("attack", true);
     }
 

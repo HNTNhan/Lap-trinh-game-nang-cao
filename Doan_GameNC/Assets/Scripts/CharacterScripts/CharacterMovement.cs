@@ -122,8 +122,8 @@ public class CharacterMovement : MonoBehaviour
         }
         else if (curStamina < maxStamina)
         {
-            curStamina += Time.deltaTime;
-            if (curStamina >= maxStamina / 5)
+            curStamina += Time.deltaTime/2;
+            if (curStamina >= maxStamina / 3)
                 isRecoverStamina = false;
         }
         float curStaminaPct = (float)curStamina / (float)maxStamina;

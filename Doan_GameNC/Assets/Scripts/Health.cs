@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
         
         if (gameObject.name == "Player")
         {
-            startingHealth *= 2;
+            startingHealth *= 8;
             currentHealth = startingHealth;
         }
         animator = GetComponentInChildren<Animator>();
