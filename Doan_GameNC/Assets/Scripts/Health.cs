@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
         if (PlayerPrefs.GetString("Difficulty") == "easy") difficulty = 1;
         else if (PlayerPrefs.GetString("Difficulty") == "normal") difficulty = 1.5f;
         else if (PlayerPrefs.GetString("Difficulty") == "hard") difficulty = 2f;
-
+        Debug.Log(PlayerPrefs.GetString("Difficulty"));
         if (transform.GetChild(0).name == "Zombie")
         {
             startingHealth = (int)Math.Round((startingHealth) * difficulty);

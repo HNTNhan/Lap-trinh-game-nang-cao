@@ -16,7 +16,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float turnSpeed = 150f;
     [SerializeField]
-    private float maxStamina = 5;
+    private float maxStamina = 3;
     private float curStamina;
     private bool isRecoverStamina = false;
 
@@ -50,6 +50,7 @@ public class CharacterMovement : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "Game")
             {
+                Debug.Log(PlayerPrefs.GetString("Difficulty"));
                 SceneManager.LoadScene(2);
             }
             else

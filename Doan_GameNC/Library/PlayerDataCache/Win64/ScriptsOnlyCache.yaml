@@ -33,6 +33,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     Unity.ugui.dll:
     - UnityEngine.EventSystems.EventSystem
@@ -377,6 +378,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11238}
     - Class: 114
       Script: {instanceID: 11454}
+    - Class: 114
+      Script: {instanceID: 11516}
     - Class: 114
       Script: {instanceID: 11590}
     - Class: 114
@@ -1092,7 +1095,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
-      Hash: a86c8f3eac0ee93c20f11d7482f1209b
+      Hash: 495dc68a71d0683b3b670b75670b71be
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharacterMovement

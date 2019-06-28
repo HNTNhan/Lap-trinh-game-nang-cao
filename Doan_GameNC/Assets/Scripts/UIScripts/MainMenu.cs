@@ -45,6 +45,8 @@ public class MainMenu : MonoBehaviour
     public void LoadScene()
     {
         PlayerData data = SaveSystem.LoadPlayer();
+        EnemyData data1 = SaveSystem.LoadEnemy();
+        PlayerPrefs.SetString("Difficulty", data1.difficulty);
         scene = data.scene;
 
     }
