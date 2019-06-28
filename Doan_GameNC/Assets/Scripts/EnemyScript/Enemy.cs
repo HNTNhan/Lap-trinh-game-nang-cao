@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
             {
                 if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f && !attacked)
                 {
-                    if (Vector3.Distance(player.GetComponent<Transform>().position, transform.position) < distance.stoppingDistance)
+                    if (Vector3.Distance(player.GetComponent<Transform>().position, transform.position) < distance.stoppingDistance + 1)
                     {
                         Attack();
                         attacked = true;

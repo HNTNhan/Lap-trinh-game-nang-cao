@@ -152,12 +152,12 @@ public class Gun : MonoBehaviour
                 {
                     if(health.GetCurrentHealth() == 0)
                     {
-                        if(enemy.gameObject.name=="Enemy")
-                            player.IncreaseScore(100);
-                        if (enemy.gameObject.name == "Enemy1")
-                            player.IncreaseScore(150);
-                        if (enemy.gameObject.name == "Enemy2")
+                        if (enemy.gameObject.name.Contains("Enemy2"))
                             player.IncreaseScore(200);
+                        else if (enemy.gameObject.name.Contains("Enemy1"))
+                            player.IncreaseScore(150);
+                        else if (enemy.gameObject.name.Contains("Enemy"))
+                            player.IncreaseScore(100);
                     }
                 }
             }

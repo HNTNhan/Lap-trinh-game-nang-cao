@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     private Quaternion rotation;
     private Animator animator;
     private float volume;
-    private string scene;
+    private int scene;
 
     public int GetCurrentHealth()
     {
@@ -45,14 +45,15 @@ public class Player : MonoBehaviour
         this.volume = volume;
     }
 
-    public string GetScene()
+    public int GetScene()
     {
         return scene;
     }
 
     private void OnEnable()
     {
-        scene = SceneManager.GetActiveScene().name;
+        if (SceneManager.GetActiveScene().name == "Game") scene = 1;
+        else scene = 2;
         volume = PlayerPrefs.GetFloat("Volume");
         Cursor.visible = false;
         health = GetComponent<Health>();

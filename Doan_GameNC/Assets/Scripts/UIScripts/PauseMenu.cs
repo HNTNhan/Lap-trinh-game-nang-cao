@@ -74,7 +74,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Load()
     {
-        SceneManager.LoadScene(1);
+        if (SceneManager.GetActiveScene().name == "Game") SceneManager.LoadScene(1);
+        else SceneManager.LoadScene(2); ;
+        
         player.GetComponent<Animator>().Rebind();
         PlayerPrefs.SetString("Load", "true");
         PlayerPrefs.SetString("Load1", "true");
