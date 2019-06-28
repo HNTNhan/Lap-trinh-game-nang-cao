@@ -10,6 +10,8 @@ public class AllEnemy : MonoBehaviour
     public float volume;
     public string difficulty;
     private int check;
+    public GameObject saveSuccess;
+    public GameObject saveFail;
 
     private void OnEnable()
     {
@@ -33,10 +35,10 @@ public class AllEnemy : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            EditorUtility.DisplayDialog("Save Game", "Save Game Fail \n" + e.Message, "OK");
+            saveFail.SetActive(true);
             return;
         }
-        EditorUtility.DisplayDialog("Save Game", "Save Game Success", "OK");
+        saveSuccess.SetActive(true);
     }
 
     public void LoadEnemy()

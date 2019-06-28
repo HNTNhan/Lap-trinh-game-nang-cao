@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private Animator animator;
     private float volume;
     private int scene;
+    //public GameObject saveSuccess;
+    public GameObject saveFail;
 
     public int GetCurrentHealth()
     {
@@ -75,7 +77,7 @@ public class Player : MonoBehaviour
         catch (System.Exception e)
         {
             PlayerPrefs.SetString("Save", "fail");
-            EditorUtility.DisplayDialog("Save Game", "Save Game Fail \n" + e.Message, "OK");
+            saveFail.SetActive(true);
             return;
         }
         PlayerPrefs.SetString("Save", "true");
