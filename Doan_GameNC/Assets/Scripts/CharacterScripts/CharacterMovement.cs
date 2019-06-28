@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -20,15 +21,18 @@ public class CharacterMovement : MonoBehaviour
     private bool isRecoverStamina = false;
 
     private float moveSpeed;
-
+    private GameObject landmark;
     private int check;
     private float checkRotate;
     private float rotate;
+    public GameObject victory;
+    public GameObject CMvcam;
 
     public event Action<float> OnStaminaPctChanged = delegate { };
 
     private void Awake()
     {
+        landmark = GameObject.FindGameObjectWithTag("Landmark");
         check = 0;
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
@@ -42,6 +46,26 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if (Vector3.Distance(transform.position, landmark.GetComponent<Transform>().position) <= 10)
+        {
+            if (SceneManager.GetActiveScene().name == "Game")
+            {
+                SceneManager.LoadScene(2);
+            }
+            else
+            {
+                victory.SetActive(true);
+                CMvcam.SetActive(false);
+                PauseMenu.GameIsPause = true;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+                Time.timeScale = 0f;
+                Debug.Log("Victory");
+            }
+        }
+        
+       
         if(PlayerPrefs.GetString("Load") == "true")
         {
             check++;
